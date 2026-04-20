@@ -73,7 +73,28 @@
               src="https://i.imgur.com/yZrySSq.jpg"
               alt="Shrimp dish from Dirty Breakfast"
             />
+            <div class="floating-rating">
+              <strong>4.9/5 local favorite</strong>
+              <span>Breakfast · Brunch · Late Night</span>
+            </div>
           </div>
+        </div>
+      </section>
+
+      <section class="quick-strip">
+        <div class="container quick-strip-grid">
+          <a href="https://order.toasttab.com/online/dirty-breakfast" target="_blank" rel="noreferrer">
+            <strong>Order Pickup</strong>
+            <span>Fast online checkout</span>
+          </a>
+          <a href="tel:+15133869720">
+            <strong>Call Ahead</strong>
+            <span>513-386-9720</span>
+          </a>
+          <a href="https://maps.google.com/?q=10981+Hamilton+Ave+Cincinnati+OH+45231" target="_blank" rel="noreferrer">
+            <strong>Get Directions</strong>
+            <span>10981 Hamilton Ave</span>
+          </a>
         </div>
       </section>
 
@@ -155,13 +176,21 @@
         <div class="container">
           <div class="section-head menu-head">
             <h2>Clickable Menu Items</h2>
-            <input
-              id="menuSearch"
-              type="search"
-              placeholder="Search menu items..."
-              aria-label="Search menu items"
-            />
+            <div class="menu-controls">
+              <input
+                id="menuSearch"
+                type="search"
+                placeholder="Search menu items..."
+                aria-label="Search menu items"
+              />
+              <select id="menuSort" aria-label="Sort menu items">
+                <option value="az">Sort: A to Z</option>
+                <option value="za">Sort: Z to A</option>
+                <option value="category">Sort: Category</option>
+              </select>
+            </div>
           </div>
+          <p class="menu-meta"><span id="menuCount"></span> items available</p>
           <div class="pill-row" id="categoryFilters"></div>
           <div class="menu-grid" id="menuGrid"></div>
         </div>
@@ -221,6 +250,8 @@
         >
       </div>
     </footer>
+
+    <a class="to-top" href="#home" aria-label="Back to top">↑</a>
 
     <script src="script.js"></script>
   </body>

@@ -62,9 +62,12 @@ const menuItems = [
 const filtersRoot = document.getElementById("categoryFilters");
 const menuGrid = document.getElementById("menuGrid");
 const searchInput = document.getElementById("menuSearch");
+const sortSelect = document.getElementById("menuSort");
+const menuCount = document.getElementById("menuCount");
 
 let activeCategory = "All";
 let activeQuery = "";
+let activeSort = "az";
 
 function uniqueCategories() {
   return ["All", ...new Set(menuItems.map((item) => item.category))];
@@ -89,15 +92,29 @@ function renderFilters() {
 }
 
 function filteredMenuItems() {
-  return menuItems.filter((item) => {
-    const categoryMatch = activeCategory === "All" || item.category === activeCategory;
+  const filtered = menuItems.filter((item) => {
+    const categoryMatch =
+      activeCategory === "All" || item.category === activeCategory;
     const queryMatch = item.name.toLowerCase().includes(activeQuery.toLowerCase());
     return categoryMatch && queryMatch;
   });
+
+  if (activeSort === "za") {
+    return filtered.sort((a, b) => b.name.localeCompare(a.name));
+  }
+
+  if (activeSort === "category") {
+    return filtered.sort((a, b) =>
+      `${a.category}-${a.name}`.localeCompare(`${b.category}-${b.name}`)
+    );
+  }
+
+  return filtered.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 function renderMenuItems() {
   const items = filteredMenuItems();
+  menuCount.textContent = items.length;
 
   if (!items.length) {
     menuGrid.innerHTML = `<p>No menu items found for that search.</p>`;
@@ -118,6 +135,11 @@ function renderMenuItems() {
 
 searchInput.addEventListener("input", (event) => {
   activeQuery = event.target.value;
+  renderMenuItems();
+});
+
+sortSelect.addEventListener("change", (event) => {
+  activeSort = event.target.value;
   renderMenuItems();
 });
 
