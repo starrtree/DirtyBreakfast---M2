@@ -338,6 +338,12 @@ body {
   font-weight: 600;
 }
 
+.menu-vibe {
+  margin: 0.2rem 0 0.45rem;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
 .pill-row {
   display: flex;
   flex-wrap: wrap;
@@ -363,24 +369,97 @@ body {
 
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 0.75rem;
+  gap: 1.2rem;
+}
+
+.menu-category-section {
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px dashed #ddbcff;
+  border-radius: var(--radius-lg);
+  padding: 0.85rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.menu-category-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.7rem;
+  border-bottom: 1px dashed #eacfff;
+  padding-bottom: 0.45rem;
+}
+
+.menu-category-head h3 {
+  margin: 0;
+  color: var(--purple);
+}
+
+.menu-category-head span {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.menu-category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 0.7rem;
 }
 
 .menu-item {
   background: #fff;
   border-radius: var(--radius-md);
   border: 1px solid #eed3ff;
-  padding: 0.85rem;
+  padding: 0;
+  overflow: hidden;
+  transform-origin: center;
 }
 
-.menu-item a {
+.menu-item-link {
+  display: block;
   color: var(--ink);
   text-decoration: none;
-  font-weight: 700;
 }
 
-.menu-item a:hover {
+.menu-item-media {
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(130deg, #2a0f47, #862e7b);
+}
+
+.menu-item-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder-media {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+}
+
+.menu-item-body {
+  padding: 0.65rem 0.7rem 0.75rem;
+}
+
+.menu-item-body h4 {
+  margin: 0;
+  color: var(--purple);
+  font-size: 0.95rem;
+}
+
+.menu-item-body p {
+  margin: 0.35rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.menu-item-link:hover .menu-item-body h4 {
   color: var(--red);
 }
 
@@ -389,6 +468,26 @@ body {
   font-size: 0.76rem;
   color: var(--ink-soft);
   font-weight: 700;
+}
+
+.tilt-0 {
+  transform: rotate(-0.7deg);
+}
+
+.tilt-1 {
+  transform: rotate(0.5deg);
+}
+
+.tilt-2 {
+  transform: rotate(-0.35deg);
+}
+
+.tilt-3 {
+  transform: rotate(0.9deg);
+}
+
+.tilt-4 {
+  transform: rotate(-0.2deg);
 }
 
 .visit-grid {

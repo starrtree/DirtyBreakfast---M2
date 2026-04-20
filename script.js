@@ -59,6 +59,19 @@ const menuItems = [
   { name: "Chicken Sandwich w/ Fries", category: "Late Night", url: "https://order.toasttab.com/online/dirty-breakfast/item-crispy-buttermilk-chicken-sandwich-w-fries_f03e0166-9f1d-4954-adc6-7fea62d200b0" }
 ];
 
+const itemImageMap = {
+  "Biscuit Sandwich": "https://i.imgur.com/lYs59d8.jpg",
+  "Dirty Waffle Sandwich": "https://i.imgur.com/7HwDSWu.jpg",
+  "Dirty Breakfast Dish": "https://i.imgur.com/VAXcjcP.jpg",
+  "Dirty Breakfast French Toast": "https://i.imgur.com/G9ros1o.jpg",
+  "Dirty Breakfast Bowl": "https://i.imgur.com/ExvzRys.jpg",
+  "Dirty Grits": "https://i.imgur.com/N55yE9o.jpg",
+  "Lamb Chops": "https://i.imgur.com/OE9u0W5.jpg",
+  "Texas Toast Sandwich": "https://i.imgur.com/OJxx62n.jpg",
+  "Waffle": "https://i.imgur.com/ocYoXO2.jpg",
+  "Shrimp N Grits": "https://i.imgur.com/yZrySSq.jpg"
+};
+
 const filtersRoot = document.getElementById("categoryFilters");
 const menuGrid = document.getElementById("menuGrid");
 const searchInput = document.getElementById("menuSearch");
@@ -121,15 +134,47 @@ function renderMenuItems() {
     return;
   }
 
-  menuGrid.innerHTML = items
-    .map(
-      (item) => `
-        <article class="menu-item">
-          <a href="${item.url}" target="_blank" rel="noreferrer">${item.name}</a>
-          <div class="item-category">${item.category}</div>
-        </article>
-      `
-    )
+  const grouped = items.reduce((acc, item) => {
+    if (!acc[item.category]) {
+      acc[item.category] = [];
+    }
+    acc[item.category].push(item);
+    return acc;
+  }, {});
+
+  menuGrid.innerHTML = Object.entries(grouped)
+    .map(([category, categoryItems]) => {
+      return `
+        <section class="menu-category-section">
+          <header class="menu-category-head">
+            <h3>${category}</h3>
+            <span>${categoryItems.length} items</span>
+          </header>
+          <div class="menu-category-grid">
+            ${categoryItems
+              .map((item, index) => {
+                const image = itemImageMap[item.name];
+                const tiltClass = `tilt-${index % 5}`;
+                const media = image
+                  ? `<img src="${image}" alt="${item.name}" loading="lazy" />`
+                  : `<div class="placeholder-media"><span>DIRTY PICK</span></div>`;
+                return `
+                  <article class="menu-item ${tiltClass}">
+                    <a class="menu-item-link" href="${item.url}" target="_blank" rel="noreferrer">
+                      <div class="menu-item-media">${media}</div>
+                      <div class="menu-item-body">
+                        <h4>${item.name}</h4>
+                        <p>Tap to order online</p>
+                      </div>
+                    </a>
+                  </article>
+                `;
+              })
+              .join("")}
+          </div>
+        </section>
+      `;
+    })
     .join("");
 }
 
