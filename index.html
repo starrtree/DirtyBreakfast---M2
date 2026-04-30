@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dirty Breakfast | Cincinnati Breakfast, Brunch & Late Night</title>
+    <meta
+      name="description"
+      content="Dirty Breakfast in Cincinnati, OH serving breakfast, brunch, and late-night comfort food with direct online ordering links."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar" id="home">
+      <div class="container nav">
+        <a class="brand" href="#home">DirtyBreakfast</a>
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#about">This Is Us</a>
+          <a href="#menu">Our Menu</a>
+          <a class="nav-cta" href="https://order.toasttab.com/online/dirty-breakfast" target="_blank" rel="noreferrer">Order Online</a>
+          <a href="#contact">Contact Us</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="badge">Restaurant Est. 2023 · Cincinnati, OH</p>
+            <h1>Breakfast. Brunch. Late Night. Dirty Good.</h1>
+            <p class="hero-copy">
+              Your go-to hole-in-the-wall for southern comfort: waffles,
+              sandwiches, chops, seafood & grits, cakes, and after-hours cravings.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://order.toasttab.com/online/dirty-breakfast" target="_blank" rel="noreferrer">Order Pickup</a>
+              <a class="btn btn-ghost" href="#menu">Browse Full Menu</a>
+            </div>
+            <p class="hours">Open Tue–Sun · Up to 3:30AM on Fri/Sat</p>
+          </div>
+          <div class="hero-card">
+            <img src="https://i.imgur.com/yZrySSq.jpg" alt="Dirty Breakfast shrimp and grits" />
+            <div>
+              <strong>Most Ordered:</strong> Shrimp N Grits, Dirty Waffle Sandwich, Dirty Breakfast Bowl
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="quick-links" id="about">
+        <div class="container quick-grid">
+          <a href="https://order.toasttab.com/online/dirty-breakfast" target="_blank" rel="noreferrer">
+            <h3>Order Now</h3>
+            <p>Direct ToastTab checkout</p>
+          </a>
+          <a href="tel:+15133869720">
+            <h3>Call</h3>
+            <p>513-386-9720</p>
+          </a>
+          <a href="https://maps.google.com/?q=10981+Hamilton+Ave+Cincinnati+OH+45231" target="_blank" rel="noreferrer">
+            <h3>Visit</h3>
+            <p>10981 Hamilton Ave</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="menu-shell" id="menu">
+        <div class="container">
+          <div class="menu-head">
+            <h2>Full Clickable Menu</h2>
+            <p>
+              Every item below is linked directly to your order page. Categories
+              are grouped so people can jump straight to what they want.
+            </p>
+          </div>
+
+          <div class="menu-tools">
+            <input id="menuSearch" type="search" placeholder="Search all menu items..." />
+            <select id="menuSort" aria-label="Sort menu items">
+              <option value="az">Sort A-Z</option>
+              <option value="za">Sort Z-A</option>
+              <option value="category">Sort by Category</option>
+            </select>
+          </div>
+
+          <div id="categoryFilters" class="category-pills"></div>
+          <p class="menu-results"><span id="menuCount">0</span> items showing</p>
+          <div id="menuGrid" class="menu-groups"></div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="container contact-grid">
+          <article>
+            <h3>Hours of Operation</h3>
+            <ul>
+              <li>Tuesday: 7AM–12AM</li>
+              <li>Wednesday: 7AM–12AM</li>
+              <li>Thursday: 7AM–2AM</li>
+              <li>Friday: 7AM–3:30AM</li>
+              <li>Saturday: 8AM–3:30AM</li>
+              <li>Sunday: 9AM–8PM</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Address</h3>
+            <p>10981 Hamilton Ave<br />Cincinnati, Ohio 45231</p>
+            <p><a href="tel:+15133869720">513-386-9720</a></p>
+          </article>
+          <article>
+            <h3>Stay Connected</h3>
+            <p>Follow for updates & specials.</p>
+            <div class="socials">
+              <a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+              <a href="https://www.facebook.com" target="_blank" rel="noreferrer">Facebook</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-row">
+        <p>© 2023 DIRTY BREAKFAST · Created by WDBD</p>
+        <a href="https://order.toasttab.com/online/dirty-breakfast" target="_blank" rel="noreferrer">Order Online</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
