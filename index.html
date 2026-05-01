@@ -19,7 +19,7 @@
   <body>
     <header class="topbar" id="home">
       <div class="container nav">
-        <a class="brand" href="#home">DirtyBreakfast</a>
+        <a class="brand" href="#home"><span>DIRTY</span><small>BREAKFAST</small></a>
         <nav>
           <a href="#home">Home</a>
           <a href="#about">This Is Us</a>
@@ -35,14 +35,14 @@
         <div class="container hero-grid">
           <div>
             <p class="badge">Restaurant Est. 2023 · Cincinnati, OH</p>
-            <h1>Breakfast. Brunch. Late Night. Dirty Good.</h1>
+            <h1>FRIED. SOUTHERN. DIRTY.</h1>
             <p class="hero-copy">
               Your go-to hole-in-the-wall for southern comfort: waffles,
               sandwiches, chops, seafood & grits, cakes, and after-hours cravings.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="https://order.toasttab.com/online/dirty-breakfast" target="_blank" rel="noreferrer">Order Pickup</a>
-              <a class="btn btn-ghost" href="#menu">Browse Full Menu</a>
+              <a class="btn btn-primary btn-3d" href="https://order.toasttab.com/online/dirty-breakfast" target="_blank" rel="noreferrer">Order Pickup</a>
+              <a class="btn btn-ghost btn-3d" href="#menu">Browse Full Menu</a>
             </div>
             <p class="hours">Open Tue–Sun · Up to 3:30AM on Fri/Sat</p>
           </div>
@@ -75,11 +75,26 @@
       <section class="menu-shell" id="menu">
         <div class="container">
           <div class="menu-head">
-            <h2>Full Clickable Menu</h2>
+            <h2>DIRTY MENU COMMAND CENTER</h2>
             <p>
               Every item below is linked directly to your order page. Categories
               are grouped so people can jump straight to what they want.
             </p>
+          </div>
+
+          <div class="menu-showcase">
+            <article class="stat-tile">
+              <h4>Total Items</h4>
+              <p id="menuCount">0</p>
+            </article>
+            <article class="stat-tile">
+              <h4>Categories</h4>
+              <p id="categoryCount">0</p>
+            </article>
+            <article class="stat-tile">
+              <h4>Direct Links</h4>
+              <p>ToastTab</p>
+            </article>
           </div>
 
           <div class="menu-tools">
@@ -92,7 +107,7 @@
           </div>
 
           <div id="categoryFilters" class="category-pills"></div>
-          <p class="menu-results"><span id="menuCount">0</span> items showing</p>
+          <p class="menu-results"><span id="menuVisibleCount">0</span> items showing</p>
           <div id="menuGrid" class="menu-groups"></div>
         </div>
       </section>

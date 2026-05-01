@@ -77,12 +77,16 @@ const menuGrid = document.getElementById("menuGrid");
 const searchInput = document.getElementById("menuSearch");
 const sortSelect = document.getElementById("menuSort");
 const menuCount = document.getElementById("menuCount");
+const menuVisibleCount = document.getElementById("menuVisibleCount");
+const categoryCount = document.getElementById("categoryCount");
 
 let activeCategory = "All";
 let activeQuery = "";
 let activeSort = "az";
 
 const categories = ["All", ...new Set(menuItems.map((item) => item.category))];
+categoryCount.textContent = categories.length - 1;
+menuCount.textContent = menuItems.length;
 
 function renderFilters() {
   filtersRoot.innerHTML = categories
@@ -119,7 +123,7 @@ function getFiltered() {
 
 function renderMenu() {
   const filtered = getFiltered();
-  menuCount.textContent = filtered.length;
+  menuVisibleCount.textContent = filtered.length;
 
   if (!filtered.length) {
     menuGrid.innerHTML = "<p>No matching menu items found.</p>";
